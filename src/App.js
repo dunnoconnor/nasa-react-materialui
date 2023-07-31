@@ -8,7 +8,7 @@ import { DateContext } from './contexts/DateContext'
 
 function App() {
   const [date, setDate] = useState(new Date())
-  const [size, setSize] = useState(100)
+  const [size, setSize] = useState(50)
 
   return (
     <div className="App">

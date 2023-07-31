@@ -8,7 +8,7 @@ export default function MyDatePicker() {
   const { date, setDate } = useContext(DateContext)
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DatePicker value={date} onChange={newDate => setDate(newDate)} />
+      <DatePicker value={date} label="nasa date picker" onChange={newDate => setDate(newDate)} />
     </LocalizationProvider>
   )
 }
