@@ -14,7 +14,6 @@ export default function NasaImage({ size }) {
       console.log(url.toString())
       const res = await fetch(url)
       const data = await res.json()
-      console.log(data)
       setImg(data)
     }
     try{
@@ -23,6 +22,10 @@ export default function NasaImage({ size }) {
       console.error(err)
     }
   }, [date])
-
-  return !!img && <img src={img.url} className='nasa-img' alt={img.title} width={`${size}%`} />
+  if(img){
+    return <img src={img.url} className='nasa-img' alt={img.title} width={`${size}%`} />
+  } else {
+    return <img src='/loading.jpeg' className='nasa-img' alt="loading" width={`100`} />
+  }
+  
 }
